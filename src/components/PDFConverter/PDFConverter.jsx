@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import axios from 'axios';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { ConversionHistory, NavButtons } from './components';
@@ -12,13 +12,6 @@ export const PDFConverter = () => {
   const [pdf, setPdf] = useState(null);
   const [numPages, setNumPages] = useState();
   const [pageNumber, setPageNumber] = useState(1);
-
-  useEffect(() => {
-    const storedHistory = JSON.parse(localStorage.getItem('conversionHistory'));
-    if (storedHistory) {
-      setHistory(storedHistory);
-    }
-  }, []);
 
   const addToHistory = useCallback(
     (pdf) => {
