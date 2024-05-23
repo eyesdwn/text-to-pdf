@@ -1,5 +1,7 @@
 import React from 'react';
 import { PDFConverter } from './components/';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 
 function App() {
   return (

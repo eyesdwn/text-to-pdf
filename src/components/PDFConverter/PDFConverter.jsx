@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
 import { ConversionHistory, NavButtons } from './components';
 import { API_URL } from './constants';
 
@@ -54,18 +52,23 @@ export const PDFConverter = () => {
       <div className='flex flex-col w-2/5'>
         <h2 className='text-xl font-bold mb-2 mt-2 text-white'>Enter your text here</h2>
         <textarea
+          data-testid='textInput'
           className='p-2 border rounded mb-2 text-black min-w-full h-[792px]'
           value={text}
           placeholder='Type here...'
           onChange={(e) => setText(e.target.value)}
         />
-        <button className='w-fit bg-blue-500 text-white py-2 px-4 rounded' onClick={convertToPDF}>
+        <button
+          data-testid='convertButton'
+          className='w-fit bg-blue-500 text-white py-2 px-4 rounded'
+          onClick={convertToPDF}
+        >
           Convert to PDF
         </button>
       </div>
 
       {pdf && (
-        <div className='w-2/5'>
+        <div className='w-2/5' data-testid='pdf'>
           <h2 className='text-xl font-bold mb-2 mt-2 text-white'>Here is your PDF</h2>
           <div className='relative'>
             <Document onLoadSuccess={onDocumentLoadSuccess} file={pdf}>
