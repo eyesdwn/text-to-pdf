@@ -2,6 +2,10 @@
 
 This is a simple React application that allows users to convert entered text into a PDF document. The application uses React-PDF library for rendering a PDF document, Tailwind CSS for styling and Axios for making HTTP requests to the PDF conversion API.
 
+## Demo
+Here is a [video](https://www.loom.com/share/18ede9112d884e7a8c5acdaee62ac162?sid=066b0822-85a1-43d9-a0e1-5ded80dab3f3) with a short demonstration.
+
+
 ## Project Structure
 
 - `src/App.js`: Main component rendering the app title and the PDFConverter.js component.
